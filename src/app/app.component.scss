@@ -1,0 +1,180 @@
+@import '../colors';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,700&display=swap');
+
+@mixin title {
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+}
+
+@mixin descr {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+
+* {
+  font-family: 'Nunito', sans-serif;
+  color: $primary-black;
+}
+
+.header {
+  background-color: $primary-peach;
+
+  &__title {
+    @include title;
+    font-size: 32px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+
+  small {
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  p {
+    font-weight: 800;
+    font-size: 32px;
+  }
+
+  &-old {
+    color: $secondary-grey;
+    text-decoration: line-through;
+  }
+
+  &-new {
+    color: $primary-red;
+  }
+}
+
+.button {
+  width: 96%;
+  height: 56px;
+  background: $primary-red;
+  border-radius: 18px;
+  font-size: 18px;
+  color: $primary-white;
+}
+
+.about {
+  margin-bottom: 34px;
+
+  &__title {
+    @include title;
+  }
+
+  &__block {
+    padding-left: 4px;
+    padding-right: 4px;
+
+    img {
+      width: 100%;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .subscr {
+      text-align: left;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  color: $primary-white;
+  background-color: $primary-light-blue;
+  text-align: center;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+ol {
+    max-width: 350px;
+    counter-reset: my-awesome-counter;
+    list-style: none;
+    padding-left: 40px;
+
+    li {
+       margin: 0 0 1.2rem 0;
+       counter-increment: list;
+       position: relative;
+     }
+
+     li::before {
+         content: counter(list);
+         color: $primary-white;
+         font-size: 1.5rem;
+         font-weight: bold;
+         position: absolute;
+         --size: 38px;
+         left: calc(-1 * var(--size) - 10px);
+         width: var(--size);
+         height: var(--size);
+         top: 0;
+         background: $primary-light-blue;
+         border-radius: 50%;
+         text-align: center;
+       }
+  }
+
+.benefits {
+
+    &__title {
+        @include title;
+      }
+}
+
+.how-to-buy {
+
+  &__title {
+    @include title;
+  }
+
+  border-radius: 16px;
+  background: $secondary-light-blue;
+}
+
+.order {
+
+    &__title {
+        @include title;
+      }
+
+      input {
+          width: 96%;
+          margin: 9px;
+          border: none;
+          height: 58px;
+          border-radius: 18px;
+          background: $secondary-grey;
+          ::placeholder {
+              color: $secondary-grey;
+            font-size: 18px;
+            font-weight: 600;
+          }
+      }
+}
