@@ -1,0 +1,133 @@
+<section class="prices mt-3 mb-5 center">
+  <div class="price container flex-row ">
+    <div class="w-50">
+      <small>Стара ціна</small>
+      <p class="price-old">{{ oldPrice }} грн</p>
+    </div>
+    <div class="w-50">
+      <small>Нова ціна</small>
+      <p class="price-new">{{ newPrice }} грн</p>
+    </div>
+  </div>
+  <button class="btn button">Замовити</button>
+</section>
+
+<section class="about center container">
+  <h3 class="about__title">Про продукт</h3>
+  <div class="about__block">
+    <p class="subscr">
+      {{ content.ABOUT_DESCR }}
+    </p>
+    <img src="../assets/img/benefit1.png" alt="#">
+  </div>
+  <div class="about__block">
+    <p class="subscr">
+      {{ content.ABOUT_DESCR }}
+    </p>
+    <video poster="../assets/img/benefit2.png">
+    </video>
+  </div>
+</section>
+
+<section class="benefits center m-3">
+  <div class="benefits__block pt-3 container row g-2">
+    <h3 class="benefits__title mb-3">Переваги</h3>
+    <div class="benefits__icons col-2">
+      <div class="icon">
+        <img src="../assets/icons/benefit-check1.png" alt="">
+      </div>
+      <div class="icon">
+        <img src="../assets/icons/benefit-dollar-sign2.png" alt="">
+      </div>
+      <div class="icon">
+        <img src="../assets/icons/benefit-clock3.png" alt="">
+      </div>
+      <div class="icon">
+        <img src="../assets/icons/benefit-credit-card4.png" alt="">
+      </div>
+    </div>
+    <ul class="benefits__list col-10">
+      <li class="ml-3" *ngFor="let benefit of benefitsList">{{ benefit }}</li>
+    </ul>
+    <button class="btn button m-auto">Замовити за {{ newPrice }} грн</button>
+  </div>
+</section>
+
+<section class="reviews pb-5">
+  <div class="container">
+    <h3 class="reviews__title mb-3">
+      Відгуки покупців
+    </h3>
+    <div class="wrapper">
+      <owl-carousel-o [options]="reviewOptions">
+        <ng-container *ngFor="let slide of reviews">
+          <ng-template carouselSlide>
+            <img [src]="slide.src" [alt]="slide.alt">
+            <div class="reviews__descr mt-3 mx-1">
+              <p class="reviews__text">{{ slide.text }}</p>
+              <div class="reviews__author">
+                <p>{{ slide.author }}</p>
+                <small>{{ slide.region }}</small>
+              </div>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+
+<section class="how-to-buy center m-3">
+  <div class="how-to-buy__block pt-3 container row g-2">
+    <h3 class="how-to-buy__title mb-3">Як купити</h3>
+    <div class="how-to-buy__icons col-2">
+      <div class="icon" *ngFor="let howToBuyItem of howToBuyList; let i = index">
+        {{i + 1}}
+      </div>
+    </div>
+    <ul class="benefits__list col-10">
+      <li class="ml-3" *ngFor="let howToBuyItem of howToBuyList">
+        {{ howToBuyItem }}</li>
+    </ul>
+  </div>
+</section>
+
+<section class="order mb-5">
+  <div class="container">
+  </div>
+  <div class="container m-auto">
+    <h3 class="order__title px-5">
+      Оформлення замовлення
+    </h3>
+    <!-- <form
+    action="https://formspree.io/f/xdoypblo"
+    method="POST"
+    > -->
+    <form>
+      <input type="text" name="name" id="name" placeholder="Введіть Ваше ім'я" [formControl]="nameFormControl">
+      <input type="tel" name="tel" id="tel" placeholder="Введіть Ваш номер телефону" [formControl]="phoneFormControl">
+      <input type="email" name="email" id="email" placeholder="Введіть Ваш email" [formControl]="emailFormControl">
+      <button class="btn button" (click)="register()">
+        Замовити за {{newPrice}} грн
+      </button>
+    </form>
+  </div>
+</section>
+<section class="deliver mx-3 mb-5">
+  <div class="container box pt-4 pb-5">
+    <h3 class="deliver__title pb-3">Способи доставки</h3>
+    <div class="row mb-4">
+      <div class="col-6 center">
+        <img src="../assets/img/nova_poshta_logo.png" alt="">
+      </div>
+      <div class="col-6 center">
+        <img src="../assets/img/justin_logo.png" alt="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 center">
+        <img src="../assets/img/ukrposhta_logo.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,3 +1,382 @@
+@import './styles/colors';
+@import './styles/mixins';
 @import '~bootstrap/scss/bootstrap';
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,700&display=swap');
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  color: $primary-black;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.header {
+  background-color: $primary-peach;
+  
+  img {
+    width: 96%;
+  }
+
+  &__title {
+    @include title;
+    font-size: 32px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+
+  small {
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  p {
+    font-weight: 800;
+    font-size: 32px;
+  }
+
+  &-old {
+    color: $secondary-grey;
+    text-decoration: line-through;
+  }
+
+  &-new {
+    color: $primary-red;
+  }
+}
+
+video {
+  width: 96%;
+  height: auto;
+}
+
+.button {
+  width: 96%;
+  height: 56px;
+  background: $primary-red;
+  border-radius: 18px;
+  font-size: 18px;
+  color: $primary-white;
+}
+
+.about {
+  margin-bottom: 34px;
+
+  &__title {
+    @include title;
+  }
+
+  &__block {
+    padding-left: 4px;
+    padding-right: 4px;
+
+    img {
+      width: 100%;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .subscr {
+      text-align: left;
+      font-size: 18px;
+      font-weight: 600;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin: 0;
+    }
+  }
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  color: $primary-white;
+  background-color: $primary-light-blue;
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.benefits {
+  margin-bottom: 50px;
+  text-align: center;
+
+  &__title {
+    @include title;
+  }
+
+  &__block {
+    border-radius: 18px;
+    background-color: $primary-light-green;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: column;
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 50px;
+      background-color: $primary-green;
+      margin-bottom: 18px;
+      border-radius: 50%;
+    }
+  }
+
+  &__list {
+
+    li {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      height: 50px;
+      font-size: 20px;
+      font-weight: 600;
+      list-style-type: none;
+      margin-bottom: 18px;
+      padding-left: 12px;
+    }
+  }
+}
+
+.reviews {
+  padding-bottom: 100px;
+  &__title {
+    @include title;
+  }
+
+  &__descr {
+    width: 90%;
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 700;
+    font-style: italic;
+    color: $primary-black;
+    line-height: 25px;
+  }
+
+  &__author {
+
+    p {
+      font-weight: 18;
+      font-weight: 600;
+      color: $primary-red;
+      margin-bottom: 0;
+    }
+
+    small {
+      font-size: 14px;
+      font-weight: 400;
+      color: $primary-black;
+    }
+  }
+}
+
+.wrapper {
+  position: relative;
+  height: 300px;
+  padding-bottom: 50px;
+}
+
+owl-carousel-o {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  div {
+    margin: 0 auto;
+  }
+}
+
+.owl-stage {
+  display: flex;
+  justify-content: center;
+}
+
+.owl-item {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+  background: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.owl-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.how-to-buy {
+  padding-top: 62px;
+
+  &__title {
+    @include title;
+  }
+
+  &__block {
+    border-radius: 18px;
+    background-color: $secondary-light-blue;
+  }
+  &__icons {
+    display: flex;
+    flex-direction: column;
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 50px;
+      background-color: $primary-light-blue;
+      color: $primary-white;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 18px;
+      border-radius: 50%;
+    }
+  }
+
+  &__list {
+
+    li {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      height: 50px;
+      font-size: 20px;
+      font-weight: 600;
+      list-style-type: none;
+      margin-bottom: 18px;
+      padding-left: 12px;
+    }
+  }
+}
+
+.order {
+  text-align: center;
+
+  &__title {
+    @include title;
+  }
+
+  input {
+    margin: 9px;
+    border: none;
+    width: 96%;
+    height: 58px;
+    border-radius: 18px;
+    background: $secondary-grey;
+    text-indent: 14px;
+
+    ::placeholder {
+      color: $secondary-grey;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  button {
+    margin: 9px 0 0 0;
+  }
+}
+
+.box {
+  background-color: $primary-peach;
+  border-radius: 18px;
+}
+
+.deliver {
+
+  &__title {
+    @include title;
+  }
+}
+
+.footer {
+  background-color: $primary-peach;
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__email {
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: $primary-black;
+  }
+
+  &__copyright {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
